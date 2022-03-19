@@ -1,3 +1,10 @@
+--DELETE THIS BEFORE USING THIS CODE; LEAVING THIS TEXT WILL MAKE AN ERROR IN YOUR CODE--
+
+{
+TextEditor | This is written in HTML, Javascript, CSS, and JQuery. 
+
+}
+
 <!DOCTYPE HTML> 
 
 <html>
@@ -7,6 +14,62 @@
 		</head>
 
 	<body>
+		
+		<style>
+			
+			input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: #eee;
+}
+
+.box:focus {
+  outline: none;
+}
+		</style>
+		<script>
+			let box = document.querySelector('#box');
+let char = document.querySelector('#char');
+let words = document.querySelector('#words')
+
+let btn = document.querySelector('#btn');
+let change = document.querySelector('#change');
+
+btn.addEventListener('click', function() {
+
+box.value = "";
+char.innerHTML = "Amount of Characters: 0";
+words.innerHTML = "Amount of Words: 0";
+
+});
+
+change.addEventListener('click', function() {
+box.value = box.value;
+
+});
+
+function changeTxt() {
+if (box.value == "") {
+
+words.innerHTML = "Amount of Words: 0"
+}
+
+var text = box.value;
+
+char.innerHTML = "Amount of Characters: " + text.length
+
+var wordCount = text.match(/(\w+)/g).length;
+
+words.innerHTML = "Amount of Words: " + wordCount;
+
+}
+
+
+			
+		</script>
+		
 		<center>
 			<textarea id="box" onchange="changeTxt()" placeholder="Type something here..." rows="4" cols="50">
 
